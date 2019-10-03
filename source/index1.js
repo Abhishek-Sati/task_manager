@@ -18,10 +18,6 @@ mongoose.connect(process.env.connectionurl,{useNewUrlParser:true,useCreateIndex:
 const app=express();
 const port=process.env.PORT;
 app.use(express.json());
-//this is used to stop site for some maintaince :-
-// app.use((req,res,next)=>{
-//     res.status(503).send("server is under maintainance mode")
-// })
 app.use(userrouter);
 app.use(taskrouter);
 app.listen(port,()=>{
