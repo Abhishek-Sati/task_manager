@@ -6,6 +6,9 @@ const authenticate=require("./../middleware/auth.js")
 const multer=require("multer");
 const sharp=require("sharp");
 const {sendwelcomeemail,deleteemail}=require("./../emails/myacc")
+router.get("/",(req,res)=>{
+    res.send("<h1>Welcome to Task Manager Application</h1>")
+})
 router.post("/users",async (req,res)=>{
    const user=new User(req.body);
   try{
